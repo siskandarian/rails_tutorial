@@ -1,7 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
 /* universal */
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
 
 html {
   overflow-y: scroll;
@@ -46,7 +56,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: $gray-light;
 }
 
 p {
@@ -68,7 +78,7 @@ p {
 }
 
 #logo:hover {
-  color: #fff;
+  color: white;
   text-decoration: none;
 }
 
@@ -82,11 +92,11 @@ footer {
 }
 
 footer a {
-  color: #555;
+  color: $gray;
 }
 
 footer a:hover {
-  color: #222;
+  color: $gray-darker;
 }
 
 footer small {
@@ -101,4 +111,13 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 15px;
+}
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
 }
